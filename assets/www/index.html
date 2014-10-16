@@ -26,20 +26,25 @@
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link rel="stylesheet" type="text/css"
 	href="jquery.mobile-1.4.4/jquery.mobile-1.4.4.css" />
-<title>Hello World</title>
+<title>Safe Car</title>
 </head>
 <body>
-	<div data-role="page">
+
+	<div data-role="page" id="signin">
 		<div data-role="header" data-theme="b" data-position="fixed">
-			<h1>Page Title</h1>
-			<a href="#left-panel" data-icon="bars" data-iconpos="notext"
-				data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open
-				left panel</a>
+			<h1>SafeCar Signin</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#signin" data-role="tab" data-icon="grid"
+						class="ui-btn-active">Signin</a></li>
+					<li><a href="#signup" data-role="tab" data-icon="grid">Signup</a></li>
+				</ul>
+			</div>
 		</div>
 		<!-- /navbar -->
 		<div role="main" class="ui-content jqm-content jqm-fullwidth">
 			<form class="userform">
-				<h2>Login</h2>
+				<h2>Signin</h2>
 				<label for="name">Username:</label> <input type="text" name="name"
 					id="name" value="" data-clear-btn="true" data-mini="true">
 				<label for="password">Password:</label> <input type="password"
@@ -51,33 +56,80 @@
 							class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a>
 					</div>
 					<div class="ui-block-b">
-						<a href="#" data-rel="close"
-							class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a>
+						<a href="main.html" data-rel="close"
+							class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Signin</a>
 					</div>
 				</div>
 			</form>
 		</div>
-
-
-		<div data-role="panel" id="left-panel" data-display="push"  data-theme="b" data-position-fixed="true">
-			<h1>Some Options</h1>
-			<ul data-role="listview">
-				<li><a href="#" onclick="navigator.notification.vibrate(0)">Vibrate</a></li>
-				<li><a href="#" onclick="navigator.notification.beep(2)">Beep</a></li>
-				<li><a href="#">Dummy Item</a></li>
-				<li><a href="#">Dummy Item 2</a></li>
-				<li><a href="map.html" rel="external">Open Google Maps</a></li>
-			</ul>
-		</div>
-		<!-- /panel -->
-
 	</div>
 	<!-- page -->
+
+	<div data-role="page" id="signup">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1>SafeCar Signup</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#signin" data-role="tab" data-icon="grid" >Signin</a></li>
+					<li><a href="#signup" data-role="tab" data-icon="grid" class="ui-btn-active" >Signup</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /navbar -->
+		<div role="main" class="ui-content jqm-content jqm-fullwidth">
+			<form class="userform">
+				<h2>Signup</h2>
+				<label for="name">Username:</label> <input type="text" name="name"
+					id="name" value="" data-clear-btn="true" data-mini="true">
+				<label for="password">Password:</label> <input type="password"
+					name="password" id="password" value="" data-clear-btn="true"
+					autocomplete="off" data-mini="true"> <label for="name">Username:</label>
+				<input type="text" name="name" id="name" value=""
+					data-clear-btn="true" data-mini="true"> <label
+					for="password">Password:</label> <input type="password"
+					name="password" id="password" value="" data-clear-btn="true"
+					autocomplete="off" data-mini="true">
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<a href="#" data-rel="close"
+							class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="main.html" data-rel="close"
+							class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Signup</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- page -->
+
 
 	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 	<script type="text/javascript"
 		src="jquery.mobile-1.4.4/jquery.mobile-1.4.4.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+		$(document).bind("mobileinit", function() {
+			// Make your jQuery Mobile framework configuration changes here!
+			$.support.cors = true;
+		    $.mobile.allowCrossDomainPages = true; 
+		});
+		$("a[data-role=tab]").each(function() {
+			var anchor = $(this);
+			anchor.bind("click", function() {
+				$.mobile.changePage(anchor.attr("href"), {
+					transition : "none",
+					changeHash : false
+				});
+				return false;
+			});
+		});
+
+		$("div[data-role=page]").bind("pagebeforeshow", function(e, data) {
+			$.mobile.silentScroll(0);
+		});
+	</script>
 </body>
 </html>
