@@ -29,14 +29,14 @@
 <title>Safe Car</title>
 </head>
 <body>
-	<div data-role="page">
+	<div data-role="page" id="tab1">
 		<div data-role="header" data-theme="b" data-position="fixed">
 			<h1>SafeCar</h1>
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#" data-icon="eye" class="ui-btn-active">Ocurrences</a></li>
-					<li><a href="#" data-icon="home">My Vehicles</a></li>
-					<li><a href="#" data-icon="gear">Settings</a></li>
+					<li><a href="#tab1" data-role="tab" data-icon="eye" class="ui-btn-active">Ocurrences</a></li>
+					<li><a href="#tab2" data-role="tab" data-icon="home">My Vehicles</a></li>
+					<li><a href="#tab3" data-role="tab" data-icon="gear">Settings</a></li>
 				</ul>
 			</div>
 			<!-- /navbar -->
@@ -61,13 +61,67 @@
 				<li><a href="#">Ferrari</a></li>
 			</ul>
 		</div>
-	</div>
-	<!-- page -->
+	</div><!-- page -->
+	
+	
+	<div data-role="page" id="tab2">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1>Tab2</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#tab1" data-role="tab" data-icon="eye">Ocurrences</a></li>
+					<li><a href="#tab2" data-role="tab" data-icon="home"  class="ui-btn-active">My Vehicles</a></li>
+					<li><a href="#tab3" data-role="tab" data-icon="gear">Settings</a></li>
+				</ul>
+			</div>
+			<!-- /navbar -->
+		</div>
+		<!-- /navbar -->
+		<div role="main" class="ui-content jqm-content jqm-fullwidth">
+			<h1>Tab2</h1>
+		</div>
+	</div><!-- page -->
+	
+	
+	<div data-role="page" id="tab3">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1>Tab3</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#tab1" data-role="tab" data-icon="eye">Ocurrences</a></li>
+					<li><a href="#tab2" data-role="tab" data-icon="home">My Vehicles</a></li>
+					<li><a href="#tab3" data-role="tab" data-icon="gear" class="ui-btn-active">Settings</a></li>
+				</ul>
+			</div>
+			<!-- /navbar -->
+		</div>
+		<!-- /navbar -->
+		<div role="main" class="ui-content jqm-content jqm-fullwidth">
+			<h1>Page3</h1>
+		</div>
+	</div><!-- page -->
 
 	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 	<script type="text/javascript"
 		src="jquery.mobile-1.4.4/jquery.mobile-1.4.4.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+		<script>
+		$("a[data-role=tab]").each(function() {
+			var anchor = $(this);
+			anchor.bind("click", function() {
+				$.mobile.changePage(anchor.attr("href"), {
+					transition : "none",
+					changeHash : false
+				});
+				return false;
+			});
+		});
+
+		$("div[data-role=page]").bind("pagebeforeshow", function(e, data) {
+			$.mobile.silentScroll(0);
+		});
+	</script>
+	
 </body>
 </html>
