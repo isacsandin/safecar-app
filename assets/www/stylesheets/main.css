@@ -3,3 +3,19 @@
    -webkit-box-shadow: none !important;
    box-shadow: none !important;
 }
+
+.ui-block-a.main { width: 10% }
+.ui-block-b.side { width: 90%; } 
+
+.ui-listview.noborder>.ui-li-static, .ui-listview.noborder>.ui-li-divider, .ui-listview.noborder>li>a.ui-btn {
+	border-style: none !important;
+}
+
+.ui-listview.noborder>.ui-li-static {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.ui-btn-icon-left.nobackground:after {
+	background-color: transparent !important;
+}

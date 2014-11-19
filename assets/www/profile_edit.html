@@ -30,20 +30,29 @@
 <!-- header -->
 <div data-role="header" style="overflow:hidden;" data-position="fixed">
 	<h1>Profile</h1>
-	<a href="#" class="ui-btn-right">Edit</a>
+	<a href="#" class="ui-btn-right">Save</a>
 </div>
 <!-- /header -->
 <!-- content -->
 <div>
-	<ul data-role="listview">
+	<ul data-role="listview" class="noborder">
 		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">PERSONAL</li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-user ui-btn-icon-left">Alan Cardoso</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-calendar ui-btn-icon-left">13/07/1983</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-phone ui-btn-icon-left">55 (31) 8649-5030</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-location ui-btn-icon-left">Belo Horizonte, MG - Brasil</a></li>
-		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">SOCIAL</li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-facebook ui-btn-icon-left">Connect with Facebook</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-twitter ui-btn-icon-left">Connect with Twitter</a></li>
+		<li class="ui-field-contain">
+			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-user ui-btn-icon-left nobackground"></i></div>
+			<div class="ui-block-b side"><input type="text" value="Alan Cardoso"/></div>
+		</li>
+		<li class="ui-field-contain">
+			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-calendar ui-btn-icon-left nobackground"></i></div>
+			<div class="ui-block-b side"><input type="text" value="13/07/1983"/></div>
+		</li>
+		<li class="ui-field-contain">
+			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-phone ui-btn-icon-left nobackground"></i></div>
+			<div class="ui-block-b side"><input type="text" value="55 (31) 8649-5030"/></div>
+		</li>
+		<li class="ui-field-contain">
+			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-location ui-btn-icon-left nobackground"></i></div>
+			<div class="ui-block-b side"><input type="text" value="Belo Horizonte, MG - Brasil"/></div>
+		</li>
 	</ul>
 </div>
 <!-- /content -->
