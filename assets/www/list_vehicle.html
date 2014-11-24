@@ -29,23 +29,29 @@
 <body>
 <!-- header -->
 <div data-role="header" style="overflow:hidden;" data-position="fixed">
-	<h1>Profile</h1>
-	<a href="#" class="ui-btn-right">Edit</a>
+	<h1>Vehicles</h1>
+	<a href="#" class="ui-btn-right">Add</a>
 </div>
 <!-- /header -->
 <!-- content -->
-<div>
-	<ul data-role="listview">
-		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">PERSONAL</li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-user ui-btn-icon-left">Alan Cardoso</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-calendar ui-btn-icon-left">13/07/1983</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-phone ui-btn-icon-left">55 (31) 8649-5030</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-location ui-btn-icon-left">Belo Horizonte, MG - Brasil</a></li>
-		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">SOCIAL</li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-facebook ui-btn-icon-left">Connect with Facebook</a></li>
-		<li><a href="#" class="noshadow ui-btn ui-alt-icon ui-nodisc-icon ui-icon-twitter ui-btn-icon-left">Connect with Twitter</a></li>
-	</ul>
-</div>
+<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="edit" data-split-theme="a" data-inset="true">
+	<li>
+		<a href="#">
+			<img src="img/album-bb.jpg">
+			<h2>Ferrari</h2>
+			<p>FER-0066</p>
+		</a>
+		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+	</li>
+	<li>
+		<a href="#">
+			<img src="img/album-hc.jpg">
+			<h2>Mercedes</h2>
+			<p>HLR-2345</p>
+		</a>
+		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+	</li>
+</ul>
 <!-- /content -->
 <!-- footer -->
 <div data-role="footer" data-position="fixed">
