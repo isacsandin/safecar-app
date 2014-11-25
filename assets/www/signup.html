@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blumap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css" />
+<link rel="stylesheet" href="stylesheets/main.css" />
+<script type="text/javascript" src="libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.js"></script>
+<!--     <script src="libs/requirejs/require.js" data-main="js/main"></script> -->
+
+</head>
+<body>
+
+<!-- content -->
+<div role="main" class="ui-content jqm-content jqm-fullwidth">
+	<form class="userform">
+		<div style="text-align:center;">
+			<h2>Create Account</h2>
+		</div>
+		
+		<div class="left-inner-addon ">
+		    <i class="ui-alt-icon ui-icon-user ui-btn-icon-left nobackground"></i>
+			<input type="text"
+				name="name" id="name" placeholder="Email" 
+				value="" data-mini="true"> 
+		</div>
+		
+		<div class="left-inner-addon ">
+		    <i class="ui-alt-icon ui-nodisc-icon ui-icon-lock ui-btn-icon-left nobackground"></i>
+			<input type="password" name="password" id="password" placeholder="Password" 
+				value="" autocomplete="off" data-mini="true">
+		</div>
+		
+		<div>
+			<label for="show-password">Mostrar senha</label>
+			<input type="checkbox" name="show-password" id="show-password" data-mini="true"/>
+		</div>
+
+		<div style="text-align:center;margin-top:40px">
+		<p>By creating an account, you are agreeing to our <a href="#">Terms of Service</a>.</p>
+		</div>
+		<a href="main.html" rel="external" 
+			class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini login-button">
+			Start using Blumap
+		</a>
+	</form>
+</div>
+<!-- /content -->
+
+</body>
+</html>
