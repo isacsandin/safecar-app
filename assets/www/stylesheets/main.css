@@ -19,3 +19,31 @@
 .ui-btn-icon-left.nobackground:after {
 	background-color: transparent !important;
 }
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 40px;
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 16px 12px;
+    pointer-events: none;
+    background-color: transparent !important;
+}
+
+.login-button {
+	margin-top: 20px;
+}
+
+.signup-div {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.logo-div {
+	margin-top: 30px;
+	margin-bottom: 50px;
+	text-align: center;
+}
