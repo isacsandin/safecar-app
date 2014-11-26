@@ -34,28 +34,58 @@
 </div>
 <!-- /header -->
 <!-- content -->
+
 <div>
-	<ul data-role="listview" class="noborder">
+	<ul data-role="listview">
 		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">PERSONAL</li>
-		<li class="ui-field-contain">
-			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-user ui-btn-icon-left nobackground"></i></div>
-			<div class="ui-block-b side"><input type="text" value="Alan Cardoso"/></div>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a label-edit">
+		    		<i class="ui-alt-icon ui-nodisc-icon ui-icon-user ui-btn-icon-left nobackground"></i>
+					<b>Name</b>
+				</div>
+				<div class="ui-block-b">
+					<input type="text" value="Alan Cardoso" data-mini=true/>
+				</div>
+			</div>
 		</li>
-		<li class="ui-field-contain">
-			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-calendar ui-btn-icon-left nobackground"></i></div>
-			<div class="ui-block-b side"><input type="text" value="13/07/1983"/></div>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a label-edit">
+		    		<i class="ui-alt-icon ui-nodisc-icon ui-icon-calendar ui-btn-icon-left nobackground"></i>
+					<b>Birthday</b>
+				</div>
+				<div class="ui-block-b">
+					<input type="text" value="13/07/1983" data-mini=true/>
+				</div>
+			</div>
 		</li>
-		<li class="ui-field-contain">
-			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-phone ui-btn-icon-left nobackground"></i></div>
-			<div class="ui-block-b side"><input type="text" value="55 (31) 8649-5030"/></div>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a label-edit">
+		    		<i class="ui-alt-icon ui-nodisc-icon ui-icon-phone ui-btn-icon-left nobackground"></i>
+					<b>Phone</b>
+				</div>
+				<div class="ui-block-b"> 
+					<input type="text" value="55 (31) 8649-5030" data-mini=true/>
+				</div>
+			</div>
 		</li>
-		<li class="ui-field-contain">
-			<div class="ui-block-a main"><i class="ui-alt-icon ui-icon-location ui-btn-icon-left nobackground"></i></div>
-			<div class="ui-block-b side"><input type="text" value="Belo Horizonte, MG - Brasil"/></div>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a label-edit">
+					<i class="ui-alt-icon ui-nodisc-icon ui-icon-location ui-btn-icon-left nobackground"></i>
+					<span class="edit-header-listview"><b>Location</b></span>
+				</div>
+				<div class="ui-block-b"  style="white-space:normal">
+					<input type="text" value="Belo Horizonte, MG - Brasil" data-mini=true/>
+				</div>
+			</div>
 		</li>
 	</ul>
 </div>
 <!-- /content -->
+
 <!-- footer -->
 <div data-role="footer" data-position="fixed">
 	<div data-role="navbar">

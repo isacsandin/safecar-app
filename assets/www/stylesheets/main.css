@@ -48,6 +48,10 @@
 	text-align: center;
 }
 
+.label-edit {
+	padding-top:13px;
+}
+
 .ui-grid-c img {
     width  : 100%;
     height : auto;
