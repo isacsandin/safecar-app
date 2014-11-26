@@ -47,3 +47,8 @@
 	margin-bottom: 50px;
 	text-align: center;
 }
+
+.ui-grid-c img {
+    width  : 100%;
+    height : auto;
+}
