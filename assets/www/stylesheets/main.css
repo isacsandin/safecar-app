@@ -48,7 +48,7 @@
 	text-align: center;
 }
 
-.ui-grid-c img {
+.img-auto {
     width  : 100%;
-    height : auto;
+    height : 100%;
 }
