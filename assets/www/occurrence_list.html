@@ -29,29 +29,71 @@
 <body>
 <!-- header -->
 <div data-role="header" style="overflow:hidden;" data-position="fixed">
-	<h1>Vehicles</h1>
-	<a href="#" class="ui-btn-right">Add</a>
+	<h1>Occurrences</h1>
+	<a href="#" class="ui-btn-right">Mute</a>
 </div>
 <!-- /header -->
 <!-- content -->
-<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="edit" data-split-theme="a" data-inset="true">
+<div style="padding-left:10px; padding-right:10px">
+	<input type="text" placeholder="Search"/>
+</div>
+<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="forbidden" data-split-theme="a" data-inset="true">
+	<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">STOLED VEHICLES</li>
 	<li>
 		<a href="#">
 			<img src="img/album-bb.jpg">
-			<h2>Ferrari</h2>
-			<p>FER-0066</p>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">			
+					<h2>FER-0066</h2>
+					<p>Ferrari</p>
+				</div>
+				<div class="ui-block-b">
+					<h2>1.4 km away</h2>
+					<p>2 minutes ago</p>
+				</div>
+			</div>
+			<span class="ui-li-count">12</span>
 		</a>
 		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
 	</li>
 	<li>
 		<a href="#">
 			<img src="img/album-hc.jpg">
-			<h2>Mercedes</h2>
-			<p>HLR-2345</p>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">		
+					<h2>HLR-2345</h2>
+					<p>Mercedes</p>
+				</div>
+				<div class="ui-block-b">
+					<h2>2.1 km away</h2>
+					<p>1 minute ago</p>
+				</div>
+			</div>
+			<span class="ui-li-count">9</span>
+		</a>
+		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+	</li>
+		<li>
+		<a href="#">
+			<img src="img/album-mf.jpg">
+			<div class="ui-grid-a">
+				<div class="ui-block-a">			
+					<h2>HLR-1307</h2>
+					<p>Fazer</p>
+				</div>
+				<div class="ui-block-b">
+					<h2>5.1 km away</h2>
+					<p>10 minutes ago</p>
+				</div>
+			</div>
+			<span class="ui-li-count">98</span>
 		</a>
 		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
 	</li>
 </ul>
+<div style="padding-left:10px; padding-right:10px">
+	<a href="#" class="ui-btn ui-mini">Show More</a>
+</div>
 <!-- /content -->
 <!-- footer -->
 <div data-role="footer" data-position="fixed">
