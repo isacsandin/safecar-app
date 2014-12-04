@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head> -->
+<!--     <title>Boilerplate App</title> -->
+
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+<!--     <link rel="stylesheet" href="libs/jquery-mobile-bower/css/jquery.mobile-1.3.2.min.css" /> -->
+
+<!--     <script src="libs/requirejs/require.js" data-main="js/main"></script> -->
+<!-- </head> -->
+<!-- <body> -->
+<!-- </body> -->
+<!-- </html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blumap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css" />
+<link rel="stylesheet" href="stylesheets/main.css" />
+<link rel="stylesheet" href="libs/jquery.mobile-1.4.4/jqm-icon-pack-fa.css" />
+<script type="text/javascript" src="libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.js"></script>
+<!--     <script src="libs/requirejs/require.js" data-main="js/main"></script> -->
+
+</head>
+<body>
+<!-- header -->
+<div data-role="header" style="overflow:hidden;" data-position="fixed">
+	<h1>Configurations</h1>
+</div>
+<!-- /header -->
+
+<!-- content -->
+<div>
+	<ul data-role="listview">
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em">
+					<b>Tips</b>
+				</div>
+				<div class="ui-block-b">
+					<input type="checkbox" data-role="flipswitch" checked="true" data-mini="true" >
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em">
+					<b>Stole vehicles alerts</b>
+				</div>
+				<div class="ui-block-b">
+					<input type="checkbox" data-role="flipswitch" checked="true" data-mini="true" >
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em">
+					<b>E-mail notifications</b>
+				</div>
+				<div class="ui-block-b">
+					<input type="checkbox" data-role="flipswitch" checked="" data-mini="true" >
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em">
+					<b>Alert's radius (km)</b>
+				</div>
+				<div class="ui-block-b" data-mini="true">
+					<input type="range" min="1" max="50" value="13" data-highlight="true"/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="#" class="ui-btn" style="padding:26px">
+				<div class="ui-grid-a">
+					<div class="ui-block-a">		
+						Terms of Service
+					</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="#" class="ui-btn" style="padding:26px">
+				<div class="ui-grid-a">
+					<div class="ui-block-a">		
+						Sign out
+					</div>
+				</div>
+			</a>
+		</li>
+	</ul>
+<!-- 	<div style="text-align:center;margin-top:40px"> -->
+<!-- 		<a = href="#">Terms of Service</a></p> -->
+<!-- 	</div> -->
+</div>
+<!-- /content -->
+
+<!-- footer -->
+<div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" id="profile" data-icon="user">Profile</a></li>
+			<li><a href="#" id="vehicles" data-icon="bars">Vehicles</a></li>
+			<li><a href="#" id="alert" data-icon="alert">Alert</a></li>
+			<li><a href="#" id="occurrences" data-icon="eye">Occurrences</a></li>
+			<li><a href="#" id="settings" data-icon="gear">Settings</a></li>
+		</ul>
+	</div>
+</div>
+<!-- /footer -->
+</body>
+</html>
+
+

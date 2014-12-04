@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blumap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css" />
+<link rel="stylesheet" href="stylesheets/main.css" />
+<link rel="stylesheet" href="libs/jquery.mobile-1.4.4/jqm-icon-pack-fa.css" />
+<script type="text/javascript" src="libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.js"></script>
+<!--     <script src="libs/requirejs/require.js" data-main="js/main"></script> -->
+
+</head>
+<body>
+
+<div data-role="page" id="occurrence-page" data-url="occurrence-page">
+
+<!-- header -->
+<div data-role="header" style="overflow:hidden;" data-position="fixed">
+	<h1>Occurrence</h1>
+	<a href="#" class="ui-btn-right">Alert!</a>
+</div>
+<!-- /header -->
+
+<!-- content -->
+<div>
+	<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">PLACE OF THEFT</li>
+	<div role="main" class="ui-content" id="map-canvas" style="height: 130px;">
+	  <!-- map loads here... -->
+	</div>
+	<ul data-role="listview" style="padding:none !important;">
+		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">STOLED CAR</li>
+		<li data-icon="false" data-theme="b" class="select-vehicle">
+			<a href="#">
+				<img src="img/album-bb.jpg">
+				<h2>FER-0066</h2>
+				<p>Ferrari</p>
+			</a>
+		</li>
+		<li class="select-vehicle bla">
+			<a href="#">
+				<img src="img/album-hc.jpg">
+				<h2>HLR-2345</h2>
+				<p>Mercedes</p>
+			</a>
+		</li>
+		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit" style="margin-top:10px">OBSERVATIONS</li>
+		<li>
+<!-- 			<div style="white-space:normal !important;"> -->
+				<textarea type="text" rows="10" " data-mini=true/>A ferrari possui um adesivo de bandeira pirata atras, logo ao lado do farol esquerdo.
+				</textarea>
+<!-- 			</div> -->
+		</li>
+	</ul>
+	
+</div>
+<!-- /content -->
+
+<!-- footer -->
+<div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" id="profile" data-icon="user">Profile</a></li>
+			<li><a href="#" id="vehicles" data-icon="bars">Vehicles</a></li>
+			<li><a href="#" id="alert" data-icon="alert">Alert</a></li>
+			<li><a href="#" id="occurrences" data-icon="eye">Occurrences</a></li>
+			<li><a href="#" id="settings" data-icon="gear">Settings</a></li>
+		</ul>
+	</div>
+</div>
+
+</div>
+
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+/*
+ * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
+ * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
+ */
+$( document ).ready(function() {
+    var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
+    if ( navigator.geolocation ) {
+        function success(pos) {
+            // Location found, show map with these coordinates
+            drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+        }
+        function fail(error) {
+            drawMap(defaultLatLng);  // Failed to find location, show default map
+        }
+        // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
+        navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
+    } else {
+        drawMap(defaultLatLng);  // No geolocation support, show default map
+    }
+    function drawMap(latlng) {
+        var myOptions = {
+            zoom: 10,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        // Add an overlay to the map of current lat/lng
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: "Greetings!"
+        });
+    }
+});
+</script>
+
+<!-- /footer -->
+</body>
+</html>
+
+

@@ -4,9 +4,9 @@ require.config({
         'jquery': '../libs/jquery/jquery.min',
         'backbone': '../libs/backbone/backbone-min',
         'underscore': '../libs/underscore/underscore-min',
-        'jquerymobile': '../libs/jquery-mobile-bower/js/jquery.mobile-1.3.2.min',
+        'jquerymobile': '../libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4',
         'app': './app',
-        'templates': '../templates'
+        'templates': '../templates',
     },
     shim: {
       underscore: {
@@ -20,17 +20,16 @@ require.config({
 });
 
 require([
-        "jquery",
-        "backbone",
-        "app/routers/MainRouter",
-        "app/helpers/jQmInit"
-        ], function ($, Backbone, MainRouter) {
+  "jquery",
+  "backbone",
+  "app/routers/router"        
+], function ($, Backbone, Router) {
 
-        require([ "jquerymobile" ], function () {
-        // Instantiates a new Backbone.js Mobile Router
-        this.router = new MainRouter();
+  require([ "jquerymobile" ], function (JQueryMobile) {
 
-        Backbone.history.start();
-    });
+    this.router = new Router();
+
+    Backbone.history.start();
+  });
 
 });
