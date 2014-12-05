@@ -22,13 +22,12 @@ require.config({
 require([
   "jquery",
   "backbone",
-  "app/routers/router"        
+  "app/routers/Router",        
+  "app/helpers/jQmInit"
 ], function ($, Backbone, Router) {
 
   require([ "jquerymobile" ], function (JQueryMobile) {
-
     this.router = new Router();
-
     Backbone.history.start();
   });
 

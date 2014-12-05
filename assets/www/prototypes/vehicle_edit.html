@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blumap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css" />
+<link rel="stylesheet" href="../stylesheets/main.css" />
+<link rel="stylesheet" href="../libs/jquery.mobile-1.4.4/jqm-icon-pack-fa.css" />
+<script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="../libs/jquery.mobile-1.4.4/jquery.mobile-1.4.4.js"></script>
+
+</head>
+<body>
+<!-- header -->
+<div data-role="header" style="overflow:hidden;" data-position="fixed">
+	<h1>Vehicle</h1>
+	<a href="#" class="ui-btn-right">Save</a>
+</div>
+<!-- /header -->
+<!-- content -->
+<div>
+	<ul data-role="listview" style="padding:none !important;">
+		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">PICTURES</li>
+		<li>
+			<div class="ui-grid-c">
+				<div class="ui-block-a"><img src="../img/album-bb.jpg" class="img-auto"></div>
+				<div class="ui-block-b"><img src="../img/album-hc.jpg" class="img-auto"></div>
+				<div class="ui-block-c"><img src="../img/album-hc.jpg" class="img-auto"></div>
+				<div class="ui-block-d"><img src="../img/album-hc.jpg" class="img-auto"></div>
+			</div>
+			
+		</li>
+		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">INFORMATION</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em"><b>Plate</b></div>
+				<div class="ui-block-b"> 
+					<input type="text" value="FER-0066" data-mini=true/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em"><b>Manufacturer</b></div>
+				<div class="ui-block-b"> 
+					<input type="text" value="Ferrari" data-mini=true/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em"><b>Model</b></div>
+				<div class="ui-block-b"> 
+					<input type="text" value="Ferrari F1" data-mini=true/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em"><b>Color</b></div>
+				<div class="ui-block-b"> 
+					<input type="text" value="Vermelho" data-mini=true/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em"><b>Year</b></div>
+				<div class="ui-block-b"> 
+					<input type="number" value="2012" data-mini=true/>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" style="padding:1em"><b>Chassi</b></div>
+				<div class="ui-block-b"> 
+					<input type="text" value="93478ZZZ3E89UIA" data-mini=true/>
+				</div>
+			</div>
+		</li>
+		<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">OBSERVATIONS</li>
+		<li>
+			<div style="white-space:normal !important;">
+				<textarea type="text" rows="10" " data-mini=true/>A ferrari possui um adesivo de bandeira pirata atras, logo ao lado do farol esquerdo.
+				</textarea>
+			</div>
+		</li>
+	</ul>
+</div>
+<!-- /content -->
+<!-- footer -->
+<div data-role="footer" data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" id="profile" data-icon="user">Profile</a></li>
+			<li><a href="#" id="vehicles" data-icon="bars">Vehicles</a></li>
+			<li><a href="#" id="alert" data-icon="alert">Alert</a></li>
+			<li><a href="#" id="occurrences" data-icon="eye">Occurrences</a></li>
+			<li><a href="#" id="settings" data-icon="gear">Settings</a></li>
+		</ul>
+	</div>
+</div>
+<!-- /footer -->
+</body>
+</html>
+
+
