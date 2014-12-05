@@ -18,7 +18,8 @@ define([
 		
 		routes: {
 			'' : 'index',
-			'occurrences' : 'listOccurrences'
+			'occurrences' : 'listOccurrences',
+			'vehicles' : 'listVehicles'
 		},
 	                
 	    index: function() {
@@ -30,7 +31,16 @@ define([
 	    	
 	    	require(['app/views/OccurrenceListView'], function(OccurrenceListView) {
 		    	self.currentPage.setContentView(new OccurrenceListView());
-		    	self.currentPage.navigate();	
+		    	self.currentPage.navigate();
+	    	});
+	    },
+	    
+	    listVehicles: function() {
+	    	var self = this;
+	    	
+	    	require(['app/views/VehicleListView'], function(VehicleListView) {
+		    	self.currentPage.setContentView(new VehicleListView());
+		    	self.currentPage.navigate();
 	    	});
 	    }
     

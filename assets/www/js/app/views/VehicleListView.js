@@ -2,8 +2,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/occurrenceListTemplate.html'
-], function($, _, Backbone, occurrenceListTemplate) {
+    'text!templates/vehicleListTemplate.html'
+], function($, _, Backbone, vehicleListTemplate) {
 	var View = Backbone.View.extend({
 
 		initialize: function () {
@@ -11,7 +11,7 @@ define([
 		},
 	
 		render: function () {
-			this.$el.html(_.template(occurrenceListTemplate));
+			this.$el.html(_.template(vehicleListTemplate));
 			return this;
 		}
 	});
