@@ -1,10 +1,10 @@
 define(['jquery'], function($) {
     $(document).on("mobileinit",
         function () {
-//            $.mobile.ajaxEnabled = false;
+            $.mobile.ajaxEnabled = false;
             $.mobile.linkBindingEnabled = false;
-//            $.mobile.hashListeningEnabled = false;
-//            $.mobile.pushStateEnabled = false;
+            $.mobile.hashListeningEnabled = false;
+            $.mobile.pushStateEnabled = false;
             $.mobile.loader.prototype.options.text = "Loading ...";
             $.mobile.loader.prototype.options.textVisible = true;
 
