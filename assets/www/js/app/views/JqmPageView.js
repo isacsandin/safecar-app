@@ -55,7 +55,7 @@ define([
                 this.$('[data-role="content"]').html(this.contentView.render().$el);
             }
             if (this.footerView) {
-                this.$('[data-role="footer"]').html(this.footerView.render().$el.children());
+                this.$('[data-role="footer"]').html(this.footerView.render().$el);
             } else {
                 this.$('[data-role="footer"]').remove();
             }
