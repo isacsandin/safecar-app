@@ -2,17 +2,17 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'app/helpers/EventsHandler',
     'text!templates/navigationTemplate.html'
-], function($, _, Backbone, navigationTemplate) {
+], function($, _, Backbone, EventsHandler, navigationTemplate) {
     var View = Backbone.View.extend({
     	
     	events: {
-    		'click #profile' : 'clickProfile'
+    		'click a.nav-link' : 'navigate'
     		
     	},
     	
         initialize: function() {
-        	console.info("OK");
         },
 
         render: function() {
@@ -22,8 +22,9 @@ define([
             return this;
         },
         
-        clickProfile: function() {
-			Backbone.history.navigate('vehicles', { trigger: true });
+        navigate: function(e) {
+        	var route = $(e.currentTarget).data('router');
+			EventsHandler.GlobalNotifications.trigger('navigate', route);
         }
     });
 

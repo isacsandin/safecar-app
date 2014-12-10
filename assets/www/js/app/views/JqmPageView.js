@@ -8,6 +8,7 @@ define([
     var View = Backbone.View.extend({
         initialize: function() {
             $( document ).on( "pagechange", this.$el, this.onPageChange );
+            globalNotifications = _.extend({}, Backbone.Events);
         },
 
         tagName: 'div',

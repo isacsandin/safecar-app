@@ -1,19 +1,30 @@
 define([
         'backbone',
+        'app/helpers/EventsHandler',
         'app/views/JqmPageView',
         'app/views/NavigationView'
-], function(Backbone, jqMPageView, FooterView) {
+], function(Backbone, EventsHandler, JqMPageView, FooterView) {
     var Router = Backbone.Router.extend({
     
 		initialize: function() {
-			this.currentPage = new jqMPageView();
+			this.currentPage = new JqMPageView();
 			this.currentPage.setFooterView(new FooterView());
-		    
+			
+			this.bindEvents();
+		},
+		
+		bindEvents: function() {
+			var self = this;
+			
 			// Lógica do botão voltar
 		    $(document).on('click', '[data-rel="back"]', function(event) {
 		        window.history.back();
 		        return false;
 		    });
+		    
+		    EventsHandler.GlobalNotifications.on('navigate', function(route) {
+		    	this.navigate(route, { trigger: true });
+		    }, this);
 		},
 		
 		routes: {
@@ -23,15 +34,17 @@ define([
 		},
 	                
 	    index: function() {
-	    	this.navigate('occurrences', { trigger: true })
+	    	this.navigate('occurrences', { trigger: true });
 	    },
 	    
 	    listOccurrences: function() {
 	    	var self = this;
 	    	
 	    	require(['app/views/OccurrenceListView'], function(OccurrenceListView) {
-		    	self.currentPage.setContentView(new OccurrenceListView());
-		    	self.currentPage.navigate();
+		    	var occurrencesPage = new JqMPageView();
+		    	occurrencesPage.setContentView(new OccurrenceListView());
+		    	occurrencesPage.setFooterView(new FooterView());
+		    	occurrencesPage.navigate();
 	    	});
 	    },
 	    
@@ -39,11 +52,12 @@ define([
 	    	var self = this;
 	    	
 	    	require(['app/views/VehicleListView'], function(VehicleListView) {
-		    	self.currentPage.setContentView(new VehicleListView());
-		    	self.currentPage.navigate();
+		    	var vehiclesPage = new JqMPageView();
+		    	vehiclesPage.setContentView(new VehicleListView());
+		    	vehiclesPage.setFooterView(new FooterView());
+		    	vehiclesPage.navigate();
 	    	});
 	    }
-    
     });
 
     return Router;
