@@ -2,8 +2,9 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'app/helpers/maps',
     'text!templates/alertTemplate.html'
-], function($, _, Backbone, alertTemplate) {
+], function($, _, Backbone, maps, alertTemplate) {
 	var View = Backbone.View.extend({
 
 		initialize: function () {
