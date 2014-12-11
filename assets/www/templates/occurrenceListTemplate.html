@@ -1,6 +1,6 @@
 <div data-role="header" style="overflow:hidden;" data-position="fixed">
 	<h1>Occurrences</h1>
-	<a href="#" class="ui-btn-right">Mute</a>
+	<a class="nav-link ui-btn-right" id="mute_all" data-router="">Mute all</a>
 </div>
 
 <div style="padding-left:10px; padding-right:10px">
@@ -9,7 +9,7 @@
 <ul data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="forbidden" data-split-theme="a" data-inset="true">
 	<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">STOLED VEHICLES</li>
 	<li>
-		<a href="#">
+		<a id="occurrence" data-router="occurrence">
 			<img src="img/album-bb.jpg">
 			<div class="ui-grid-a">
 				<div class="ui-block-a">			
@@ -23,10 +23,10 @@
 			</div>
 			<span class="ui-li-count">12</span>
 		</a>
-		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+		<a href="#" id="mute"/> 
 	</li>
 	<li>
-		<a href="#">
+		<a id="occurrence" data-router="occurrence">
 			<img src="img/album-hc.jpg">
 			<div class="ui-grid-a">
 				<div class="ui-block-a">		
@@ -40,10 +40,10 @@
 			</div>
 			<span class="ui-li-count">9</span>
 		</a>
-		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+		<a href="#" id="mute"/>
 	</li>
 		<li>
-		<a href="#">
+		<a id="occurrence" data-router="occurrence">
 			<img src="img/album-mf.jpg">
 			<div class="ui-grid-a">
 				<div class="ui-block-a">			
@@ -57,10 +57,10 @@
 			</div>
 			<span class="ui-li-count">98</span>
 		</a>
-		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+		<a href="#" id="mute"/> 
 	</li>
 </ul>
 
 <div style="padding-left:10px; padding-right:10px">
-	<a href="#" class="ui-btn ui-mini">Show More</a>
+	<a href="#" id="show_more" class="ui-btn ui-mini">Show More</a>
 </div>

@@ -30,8 +30,12 @@ define([
 		routes: {
 			'' : 'index',
 			'profile' : 'profile',
+			'profile_edit' : 'profileEdit',
+			'vehicle' : 'vehicle',
 			'vehicles' : 'listVehicles',
+			'vehicle_edit' : 'vehicleEdit',
 			'alert' : 'alert',
+			'occurrence' : 'occurrence',
 			'occurrences' : 'listOccurrences',
 			'settings' : 'settings'
 		},
@@ -41,8 +45,6 @@ define([
 	    },
 
 		profile: function() {
-	    	var self = this;
-	    	
 	    	require(['app/views/ProfileView'], function(ProfileView) {
 		    	var profilePage = new JqMPageView();
 		    	profilePage.setContentView(new ProfileView());
@@ -51,9 +53,25 @@ define([
 	    	});
 	    },
 
+	    profileEdit: function() {
+	    	require(['app/views/ProfileEditView'], function(ProfileEditView) {
+		    	var profileEditPage = new JqMPageView();
+		    	profileEditPage.setContentView(new ProfileEditView());
+		    	profileEditPage.setFooterView(new FooterView());
+		    	profileEditPage.navigate();
+	    	});
+	    },
+
+	    vehicle: function() {
+	    	require(['app/views/VehicleView'], function(VehicleView) {
+		    	var vehiclePage = new JqMPageView();
+		    	vehiclePage.setContentView(new VehicleView());
+		    	vehiclePage.setFooterView(new FooterView());
+		    	vehiclePage.navigate();
+	    	});
+	    },
+
 	    listVehicles: function() {
-	    	var self = this;
-	    	
 	    	require(['app/views/VehicleListView'], function(VehicleListView) {
 		    	var vehiclesPage = new JqMPageView();
 		    	vehiclesPage.setContentView(new VehicleListView());
@@ -62,31 +80,43 @@ define([
 	    	});
 	    },
 
-	    alert: function() {
-	    	var self = this;
-	    	
-	    	require(['app/views/AlertView'], function(AlertView) {
-		    	var alertPage = new JqMPageView();
-		    	alertPage.setContentView(new AlertView());
-		    	alertPage.setFooterView(new FooterView());
-		    	alertPage.navigate();
+	    vehicleEdit: function() {
+	    	require(['app/views/VehicleEditView'], function(VehicleEditView) {
+		    	var vehicleEditPage = new JqMPageView();
+		    	vehicleEditPage.setContentView(new VehicleEditView());
+		    	vehicleEditPage.setFooterView(new FooterView());
+		    	vehicleEditPage.navigate();
 	    	});
 	    },
+
+	    alert: function() {
+	    	require(['app/views/OccurrenceCreateView'], function(OccurrenceCreateView) {
+		    	var occurrenceCreatePage = new JqMPageView();
+		    	occurrenceCreatePage.setContentView(new OccurrenceCreateView());
+		    	occurrenceCreatePage.setFooterView(new FooterView());
+		    	occurrenceCreatePage.navigate();
+	    	});
+	    },
+
+	    occurrence: function() {    	
+	    	require(['app/views/OccurrenceView'], function(OccurrenceView) {
+		    	var occurrencePage = new JqMPageView();
+		    	occurrencePage.setContentView(new OccurrenceView());
+		    	occurrencePage.setFooterView(new FooterView());
+		    	occurrencePage.navigate();
+		   	});
+	    },
 	    
-	    listOccurrences: function() {
-	    	var self = this;
-	    	
+	    listOccurrences: function() {    	
 	    	require(['app/views/OccurrenceListView'], function(OccurrenceListView) {
 		    	var occurrencesPage = new JqMPageView();
 		    	occurrencesPage.setContentView(new OccurrenceListView());
 		    	occurrencesPage.setFooterView(new FooterView());
 		    	occurrencesPage.navigate();
-	    	});
+		   	});
 	    },
 
-		settings: function() {
-	    	var self = this;
-	    	
+		settings: function() {	    	
 	    	require(['app/views/SettingsView'], function(SettingsView) {
 		    	var settingsPage = new JqMPageView();
 		    	settingsPage.setContentView(new SettingsView());
@@ -94,7 +124,7 @@ define([
 		    	settingsPage.navigate();
 	    	});
 	    }
-	  
+
     });
 
     return Router;
