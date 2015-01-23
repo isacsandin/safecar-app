@@ -1,23 +1,23 @@
 <div data-role="header" style="overflow:hidden;" data-position="fixed">
 	<h1>Vehicles</h1>
-	<a href="#" class="ui-btn-right">Add</a>
+	<a class="nav-link ui-btn-right" id="save" data-router="vehicle_edit">Add</a>
 </div>
 
 <ul data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="edit" data-split-theme="a" data-inset="true">
 	<li>
-		<a href="#">
+		<a id="vehicle" data-router="vehicle">
 			<img src="../img/album-bb.jpg">
 			<h2>FER-0066</h2>
 			<p>Ferrari</p>
 		</a>
-		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+		<a id="edit" data-router="vehicle_edit"/>
 	</li>
 	<li>
-		<a href="#">
+		<a id="vehicle" data-router="vehicle">
 			<img src="../img/album-hc.jpg">
 			<h2>HLR-2345</h2>
 			<p>Mercedes</p>
 		</a>
-		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a> 
+		<a id="edit" data-router="vehicle_edit"/>
 	</li>
 </ul>

@@ -1,0 +1,82 @@
+<div data-role="header" style="overflow:hidden;" data-position="fixed">
+	<h1>Occurrence</h1>
+	<a class="nav-link ui-btn-right" id="spot" data-router="">Spot it!</a>
+</div>
+
+<div>
+	<ul data-role="listview">
+		<div role="main" class="ui-content" id="map-canvas" style="height: 130px;">
+  			<!-- map loads here... -->
+		</div>
+		<li>
+			<div class="ui-grid-c">
+				<div class="ui-block-a"><img src="../img/album-bb.jpg" class="img-auto"></div>
+				<div class="ui-block-b"><img src="../img/album-hc.jpg" class="img-auto"></div>
+				<div class="ui-block-c"><img src="../img/album-hc.jpg" class="img-auto"></div>
+				<div class="ui-block-d"><img src="../img/album-hc.jpg" class="img-auto"></div>
+			</div>
+			
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><b>Plate</b></div><div class="ui-block-b"> FER-0066</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><b>Manufacturer</b></div><div class="ui-block-b">Ferrari</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><b>Model</b></div><div class="ui-block-b">Ferrari F1</div>
+			</div>
+		</li>
+		<li>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><b>Color</b></div><div class="ui-block-b">Vermelho</div>
+			</div>
+		</li>
+		<li>
+			<div style="white-space:normal !important;">
+				A ferrari possui um adesivo de bandeira pirata atras, logo ao lado do farol esquerdo.
+			</div>
+		</li>
+	</ul>
+</div>
+<ul data-role="listview" class="ui-nodisc-icon" data-split-icon="camera" data-split-theme="a" data-inset="true">
+	<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">SPOTS</li>
+	<li data-icon="false">
+		<a href="#">
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<h2>1.4 km away</h2>
+					<p>2 minutes ago</p>
+				</div>
+				<div class="ui-block-b">			
+					<h2>Teste endereco</h2>
+					<p>minha rua linda de morrer</p>
+				</div>
+			</div>
+		</a>
+		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-alt-icon">Edit</a>
+	</li>
+	<li data-icon="false">
+		<a href="#">
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<h2>1.4 km away</h2>
+					<p>2 minutes ago</p>
+				</div>
+				<div class="ui-block-b">			
+					<h2>Teste endereco</h2>
+					<p>minha rua linda de morrer</p>
+				</div>
+			</div>
+		</a> 
+		<a href="#" data-rel="popup" data-position-to="window" data-transition="pop">Edit</a>
+	</li>
+</ul>
+<div style="padding-left:10px; padding-right:10px">
+	<a href="#" id="show_hide_spots" class="ui-btn ui-mini">Hide Spots</a>
+</div>

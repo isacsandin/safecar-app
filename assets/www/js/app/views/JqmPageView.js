@@ -78,7 +78,8 @@ define([
             $('body').append(page.$el);
 
             // Programatically changes to the page
-            $.mobile.changePage( page.$el , { changeHash: false, transition: transition } );
+            $.mobile.changePage( page.$el , { changeHash: true, transition: transition } );
+
         },
         
         navigatePage: function(e) {
