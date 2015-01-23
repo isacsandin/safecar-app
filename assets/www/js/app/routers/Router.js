@@ -8,7 +8,7 @@ define([
     
 		initialize: function() {
 			this.currentPage = new JqMPageView();
-			this.currentPage.setFooterView(new FooterView());
+//			this.currentPage.setFooterView(new FooterView());
 			
 			this.bindEvents();
 		},

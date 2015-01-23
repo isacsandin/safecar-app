@@ -2,10 +2,15 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'app/helpers/EventsHandler',
     'text!templates/jQmPageTemplate.html'
-], function($, _, Backbone, jQmPageTemplate) {
+], function($, _, Backbone, EventsHandler, jQmPageTemplate) {
 
     var View = Backbone.View.extend({
+    	events: {
+    		'click a.nav-link' : 'navigatePage'
+    	},
+    	
         initialize: function() {
             $( document ).on( "pagechange", this.$el, this.onPageChange );
             globalNotifications = _.extend({}, Backbone.Events);
@@ -55,11 +60,11 @@ define([
             if (this.contentView) {
                 this.$('[data-role="content"]').html(this.contentView.render().$el);
             }
-            if (this.footerView) {
-                this.$('[data-role="footer"]').html(this.footerView.render().$el);
-            } else {
-                this.$('[data-role="footer"]').remove();
-            }
+//            if (this.footerView) {
+//                this.$('[data-role="footer"]').html(this.footerView.render().$el);
+//            } else {
+//                this.$('[data-role="footer"]').remove();
+//            }
 
             return this;
         },
@@ -67,13 +72,18 @@ define([
         navigate: function(transition) {
             var page = this.render();
 
-            transition = transition || $.mobile.defaultPageTransition;
+            transition = 'slide';
 
             // Add the page to the DOM
             $('body').append(page.$el);
 
             // Programatically changes to the page
             $.mobile.changePage( page.$el , { changeHash: false, transition: transition } );
+        },
+        
+        navigatePage: function(e) {
+        	var route = $(e.currentTarget).data('router');
+			EventsHandler.GlobalNotifications.trigger('navigate', route);
         },
 
         onPageChange: function(event) {
