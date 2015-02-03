@@ -5,7 +5,5 @@ define([
 		
 	});
 
-	var OccurrenceCollection = Backbone.Collection.extend({
-		model: OccurrenceModel,
-	})
+	return OccurrenceModel;
 });

@@ -8,7 +8,7 @@ define([
 	var View = Backbone.View.extend({
 
 		events: {
-    		'click #save' : 'navigate',
+    		'click #add' : 'navigate',
     		'click #vehicle' : 'navigate',
     		'click #edit' : 'navigate'
     	},
