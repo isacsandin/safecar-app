@@ -11,7 +11,8 @@ define([
 			model: '',
 			color: '',
 			notes: '',
-			year: ''
+			year: '',
+			user_id, ''
 		}
 	});
 	
