@@ -29,8 +29,8 @@ define([
 		
 		routes: {
 			'' : 'index',
-			'profile' : 'profile',
-			'profile_edit' : 'profileEdit',
+			'user' : 'user',
+			'user_edit' : 'userEdit',
 			'vehicle' : 'vehicle',
 			'vehicles' : 'listVehicles',
 			'vehicle_edit' : 'vehicleEdit',
@@ -44,21 +44,21 @@ define([
 	    	this.navigate('occurrences', { trigger: true });
 	    },
 
-		profile: function() {
-	    	require(['app/views/ProfileView'], function(ProfileView) {
-		    	var profilePage = new JqMPageView();
-		    	profilePage.setContentView(new ProfileView());
-		    	profilePage.setFooterView(new FooterView());
-		    	profilePage.navigate();
+		user: function() {
+	    	require(['app/views/UserView'], function(UserView) {
+		    	var userPage = new JqMPageView();
+		    	userPage.setContentView(new UserView());
+		    	userPage.setFooterView(new FooterView());
+		    	userPage.navigate();
 	    	});
 	    },
 
-	    profileEdit: function() {
-	    	require(['app/views/ProfileEditView'], function(ProfileEditView) {
-		    	var profileEditPage = new JqMPageView();
-		    	profileEditPage.setContentView(new ProfileEditView());
-		    	profileEditPage.setFooterView(new FooterView());
-		    	profileEditPage.navigate();
+	    userEdit: function() {
+	    	require(['app/views/UserEditView'], function(UserEditView) {
+		    	var userEditPage = new JqMPageView();
+		    	userEditPage.setContentView(new UserEditView());
+		    	userEditPage.setFooterView(new FooterView());
+		    	userEditPage.navigate();
 	    	});
 	    },
 

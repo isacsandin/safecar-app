@@ -3,8 +3,8 @@ define([
     'underscore',
     'backbone',
     'app/helpers/EventsHandler',
-    'text!templates/profileTemplate.html'
-], function($, _, Backbone, EventsHandler, profileTemplate) {
+    'text!templates/userTemplate.html'
+], function($, _, Backbone, EventsHandler, userTemplate) {
 	var View = Backbone.View.extend({
 
 		events: {
@@ -16,7 +16,7 @@ define([
 		},
 	
 		render: function () {
-			this.$el.html(_.template(profileTemplate));
+			this.$el.html(_.template(userTemplate));
 			return this;
 		},
 
