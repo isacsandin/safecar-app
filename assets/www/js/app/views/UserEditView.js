@@ -4,7 +4,7 @@ define([
     'backbone',
     'text!templates/userEditTemplate.html',
     'app/models/UserModel'
-], function($, _, Backbone, userEditTemplate) {
+], function($, _, Backbone, userEditTemplate, UserModel) {
 	var View = Backbone.View.extend({
 
 		events: {
@@ -24,14 +24,14 @@ define([
 			var user = new UserModel;
 			
 			user.set({
-				email: this.$el.find('#license_plate').val(),
-				name: this.$el.find('#license_plate').val(),
-				birthday: this.$el.find('#license_plate').val(),
-				telephone: this.$el.find('#license_plate').val(),
-				radius: this.$el.find('#license_plate').val()
+				name: this.$el.find('#name').val(),
+				email: this.$el.find('#email').val(),
+				birthday: this.$el.find('#birthday').val(),
+				telephone: this.$el.find('#telephone').val(),
+				location: this.$el.find('#location').val()
 			});			
-			
-			vehicle.save();
+
+			user.save();
         }
 	});
 	

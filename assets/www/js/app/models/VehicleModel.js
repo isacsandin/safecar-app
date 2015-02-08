@@ -2,7 +2,7 @@ define([
 	'backbone'
 ], function(Backbone) {
 	var VehicleModel = Backbone.Model.extend({
-		urlRoot: 'http://192.168.1.107:3000/api/v1/vehicles/',
+		urlRoot: 'http://192.168.1.108:3000/api/v1/vehicles/',
 		
 		defaults: {
 			license_plate: '',
@@ -12,7 +12,7 @@ define([
 			color: '',
 			notes: '',
 			year: '',
-			user_id, ''
+			user_id: ''
 		}
 	});
 	

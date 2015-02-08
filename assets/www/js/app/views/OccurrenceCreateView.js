@@ -3,8 +3,9 @@ define([
     'underscore',
     'backbone',
     'app/helpers/EventsHandler',
-    'text!templates/occurrenceCreateTemplate.html'
-], function($, _, Backbone, EventsHandler, occurrenceCreateTemplate) {
+    'text!templates/occurrenceCreateTemplate.html',
+    'app/models/OccurrenceModel'
+], function($, _, Backbone, EventsHandler, occurrenceCreateTemplate, OccurrenceModel) {
 	var View = Backbone.View.extend({
 
 		events: {
@@ -21,7 +22,15 @@ define([
 		},
 
 		alert: function() {
-        	alert("Alertado");
+			var occurrence = new OccurrenceModel;
+			
+			occurrence.set({
+				location: this.$el.find('#location').val(),
+				notes: this.$el.find('#notes').val(),
+				status: this.$el.find('#status').val()
+			});			
+			
+			occurrence.save();
         }
 	});
 	
