@@ -2,7 +2,7 @@ define([
 	'backbone'
 ], function(Backbone) {
 	var OccurrenceModel = Backbone.Model.extend({
-		urlRoot: 'http://192.168.1.108:3000/api/v1/occurrences/',
+		urlRoot: 'http://192.168.1.113:3000/api/v1/occurrences/',
 		
 		defaults: {
 			location: '',

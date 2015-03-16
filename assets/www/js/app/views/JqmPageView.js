@@ -19,20 +19,9 @@ define([
         tagName: 'div',
 
         attributes: {
-            'data-role': 'page'
+            'data-role': 'page',
+            'id': 'mainPage'
         },
-
-        /* Como a aplicação possui headers diferentes para cada página, não é necessário
-         *  usar um header genérico
-         
-        setHeaderView: function(view, addBackButton) {
-            this.headerView = view;
-
-            $.mobile.page.prototype.options.addBackBtn = ( addBackButton === true ) ? true : false;
-
-            return this;
-        },
-        */
 
         setFooterView: function(view) {
             this.footerView = view;
@@ -48,23 +37,10 @@ define([
 
         render: function() {
             this.$el.html(_.template(jQmPageTemplate));
-
-            /*
-            if (this.headerView) {
-                this.$('[data-role="header"]').html(this.headerView.render().$el.children());
-            } else {
-                this.$('[data-role="header"]').remove();
-            }
-            */
             
             if (this.contentView) {
                 this.$('[data-role="content"]').html(this.contentView.render().$el);
             }
-//            if (this.footerView) {
-//                this.$('[data-role="footer"]').html(this.footerView.render().$el);
-//            } else {
-//                this.$('[data-role="footer"]').remove();
-//            }
 
             return this;
         },
@@ -79,7 +55,6 @@ define([
 
             // Programatically changes to the page
             $.mobile.changePage( page.$el , { changeHash: true, transition: transition } );
-
         },
         
         navigatePage: function(e) {

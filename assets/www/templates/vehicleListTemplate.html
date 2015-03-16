@@ -3,21 +3,16 @@
 	<a class="nav-link ui-btn-right" id="add" data-router="vehicle_edit">Add</a>
 </div>
 
-<ul data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="edit" data-split-theme="a" data-inset="true">
-	<li>
-		<a id="vehicle" data-router="vehicle">
-			<img src="img/album-bb.jpg">
-			<h2>FER-0066</h2>
-			<p>Ferrari</p>
-		</a>
-		<a id="edit" data-router="vehicle_edit"/>
-	</li>
-	<li>
-		<a id="vehicle" data-router="vehicle">
-			<img src="img/album-hc.jpg">
-			<h2>HLR-2345</h2>
-			<p>Mercedes</p>
-		</a>
-		<a id="edit" data-router="vehicle_edit"/>
-	</li>
+
+<ul id="listVehicle" data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="edit" data-split-theme="a" data-inset="true">
+	<% collection.each(function(vehicle) { %>
+		<li>
+			<a id="vehicle_{{vehicle.get('id')}}" data-router="vehicle">
+				<img src="img/album-hc.jpg">
+				<h2><%= vehicle.get('license_plate') %></h2>
+				<p><%= vehicle.get('brand') %></p>
+			</a>
+			<a id="edit" data-router="vehicle_edit"/>
+		</li>
+	<% }); %>
 </ul>
