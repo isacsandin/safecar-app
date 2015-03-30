@@ -9,8 +9,8 @@ define([
 	var View = Backbone.View.extend({
 
 		events: {
-    		'click #add' : 'navigate',
-    		'click #vehicle' : 'navigate',
+    		'click .add-link' : 'add',
+    		'click .vehicle-link' : 'show',
     		'click #edit' : 'navigate'
     	},
     	
@@ -37,9 +37,9 @@ define([
 			return this;
 		},
 
-		navigate: function(e) {
-        	var route = $(e.currentTarget).data('router');
-			EventsHandler.GlobalNotifications.trigger('navigate', route);
+		show: function(e) {
+			var id = $(e.currentTarget).data('id');
+			EventsHandler.GlobalNotifications.trigger('navigate', 'vehicle/' + id);
         }
 	});
 	

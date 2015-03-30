@@ -11,12 +11,19 @@ define([
     		'click #save' : 'save'
     	},
 
-		initialize: function () {
+		initialize: function (options) {
+			this.vehicle = new VehicleModel();
+			
+			if(options.id != null) {
+				this.vehicle.set('id', options.id);
+				this.vehicle.fetch();
+			}
+			
 			this.render();
 		},
 	
 		render: function () {
-			this.$el.html(_.template(vehicleEditTemplate));
+			this.$el.html(_.template(vehicleEditTemplate, { vehicle: this.vehicle }));
 			return this;
 		},
 

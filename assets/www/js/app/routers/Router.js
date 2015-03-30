@@ -31,7 +31,7 @@ define([
 			'' : 'index',
 			'user' : 'user',
 			'user_edit' : 'userEdit',
-			'vehicle' : 'vehicle',
+			'vehicle/:id' : 'vehicle',
 			'vehicles' : 'listVehicles',
 			'vehicle_edit' : 'vehicleEdit',
 			'alert' : 'alert',
@@ -62,10 +62,10 @@ define([
 	    	});
 	    },
 
-	    vehicle: function() {
+	    vehicle: function(id) {
 	    	require(['app/views/VehicleView'], function(VehicleView) {
 		    	var vehiclePage = new JqMPageView();
-		    	vehiclePage.setContentView(new VehicleView());
+		    	vehiclePage.setContentView(new VehicleView({id: id}));
 		    	vehiclePage.setFooterView(new FooterView());
 		    	vehiclePage.navigate();
 	    	});

@@ -3,20 +3,30 @@ define([
     'underscore',
     'backbone',
     'app/helpers/EventsHandler',
-    'text!templates/vehicleTemplate.html'
-], function($, _, Backbone, EventsHandler, vehicleTemplate) {
+    'text!templates/vehicleTemplate.html',
+    'app/models/VehicleModel'
+], function($, _, Backbone, EventsHandler, vehicleTemplate, VehicleModel) {
 	var View = Backbone.View.extend({
 
 		events: {
 			'click #edit' : 'navigate'
 		},
 
-		initialize: function () {
+		initialize: function (options) {
+			this.vehicle = new VehicleModel();
+			
+			if(options.id != null) {
+				this.vehicle.set('id', options.id);
+				this.vehicle.fetch({
+					sucess: function(){ alert("alan gostosao " + vehicle.get("license_plate"));}
+				});
+			}
+			
 			this.render();
 		},
 	
 		render: function () {
-			this.$el.html(_.template(vehicleTemplate));
+			this.$el.html(_.template(vehicleTemplate, { vehicle: this.vehicle }));
 			return this;
 		},
 

@@ -1,18 +1,18 @@
 <div data-role="header" style="overflow:hidden;" data-position="fixed">
 	<h1>Vehicles</h1>
-	<a class="nav-link ui-btn-right" id="add" data-router="vehicle_edit">Add</a>
+	<a class="add-link nav-link ui-btn-right" data-router="vehicle_add">Add</a>
 </div>
 
 
 <ul id="listVehicle" data-role="listview" class="ui-nodisc-icon ui-alt-icon" data-split-icon="edit" data-split-theme="a" data-inset="true">
 	<% collection.each(function(vehicle) { %>
 		<li>
-			<a id="vehicle_{{vehicle.get('id')}}" data-router="vehicle">
+			<a data-id="<%= vehicle.get('id') %>" data-router="vehicle" class="vehicle-link">
 				<img src="img/album-hc.jpg">
 				<h2><%= vehicle.get('license_plate') %></h2>
 				<p><%= vehicle.get('brand') %></p>
 			</a>
-			<a id="edit" data-router="vehicle_edit"/>
+			<a class="edit-link" data-router="vehicle_edit" data-id="<%= vehicle.get('id') %>"/>
 		</li>
 	<% }); %>
 </ul>
